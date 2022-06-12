@@ -8,6 +8,9 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var computerScoreCount = 0
+    var meScoreCount = 0
 
     @IBOutlet weak var computerScoreLabel: UILabel!
     @IBOutlet weak var meScoreLabel: UILabel!
@@ -20,17 +23,17 @@ class ViewController: UIViewController {
         
         setImage(imageView: computerImageView, number: computerImageNumber)
         setImage(imageView: meImageView, number: meImageNumber)
+        
+        calculateScore(computerNumber: computerImageNumber, meNumber: meImageNumber)
     }
     
     @IBAction func resetGame(_ sender: Any) {
         computerScoreCount = 0
         computerScoreLabel.text = String(computerScoreCount)
+        
         meScoreCount = 0
         meScoreLabel.text = String(meScoreCount)
     }
-    
-    var computerScoreCount = 0
-    var meScoreCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +53,44 @@ class ViewController: UIViewController {
     }
     
     func calculateScore(computerNumber: Int, meNumber: Int) {
+        if computerNumber == 1 && meNumber == 1 {
+            print("Empate")
+        }
         
+        if computerNumber == 1 && meNumber == 2 {
+            meScoreCount += 1
+        }
+        
+        if computerNumber == 1 && meNumber == 3 {
+            computerScoreCount += 1
+        }
+        
+        if computerNumber == 2 && meNumber == 2 {
+            print("Empate")
+        }
+        
+        if computerNumber == 2 && meNumber == 1 {
+            computerScoreCount += 1
+        }
+        
+        if computerNumber == 2 && meNumber == 3 {
+            meScoreCount += 1
+        }
+        
+        if computerNumber == 3 && meNumber == 3 {
+            print("Empate")
+        }
+        
+        if computerNumber == 3 && meNumber == 1 {
+            meScoreCount += 1
+        }
+        
+        if computerNumber == 3 && meNumber == 2 {
+            computerScoreCount += 1
+        }
+        
+        computerScoreLabel.text = String(computerScoreCount)
+        meScoreLabel.text = String(meScoreCount)
     }
 }
 
