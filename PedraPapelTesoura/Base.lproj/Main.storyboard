@@ -39,8 +39,8 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eSL-TB-tWt">
-                                                        <rect key="frame" x="57" y="45.5" width="62.5" height="28.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eSL-TB-tWt">
+                                                        <rect key="frame" x="81.5" y="45.5" width="14" height="28.5"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="24"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -61,16 +61,16 @@
                                         <rect key="frame" x="3.5" y="324" width="170" height="268"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Thh-ub-P4t">
-                                                <rect key="frame" x="53.5" y="0.0" width="62.5" height="74"/>
+                                                <rect key="frame" x="67" y="0.0" width="36" height="74"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SEh-3p-0rc">
-                                                        <rect key="frame" x="13.5" y="0.0" width="36" height="37.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="36" height="37.5"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="32"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="WmX-wT-Zbn">
-                                                        <rect key="frame" x="0.0" y="45.5" width="62.5" height="28.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="WmX-wT-Zbn">
+                                                        <rect key="frame" x="11" y="45.5" width="14" height="28.5"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="24"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -89,15 +89,52 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="elT-PN-bQx">
+                                <rect key="frame" x="119" y="739" width="176.5" height="31"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FvK-lA-HnB">
+                                        <rect key="frame" x="0.0" y="0.0" width="80.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Jogar">
+                                            <color key="baseBackgroundColor" systemColor="labelColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="playGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oaw-Vc-19H"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ylI-FZ-xIg">
+                                        <rect key="frame" x="96.5" y="0.0" width="80" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Zerar">
+                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="resetGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cNE-6X-faH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="elT-PN-bQx" secondAttribute="trailing" constant="118.5" id="2gJ-7S-Vkd"/>
                             <constraint firstItem="TmP-jI-kMN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="119" id="3Hl-72-ax5"/>
+                            <constraint firstItem="elT-PN-bQx" firstAttribute="trailing" secondItem="TmP-jI-kMN" secondAttribute="trailing" id="JnZ-jg-3VM"/>
+                            <constraint firstItem="elT-PN-bQx" firstAttribute="centerX" secondItem="TmP-jI-kMN" secondAttribute="centerX" id="N22-jZ-Yu3"/>
+                            <constraint firstItem="elT-PN-bQx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="119" id="SaK-uF-bdV"/>
                             <constraint firstItem="TmP-jI-kMN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="diJ-Iu-q60"/>
+                            <constraint firstItem="elT-PN-bQx" firstAttribute="width" secondItem="TmP-jI-kMN" secondAttribute="width" id="gUo-pF-heY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TmP-jI-kMN" secondAttribute="trailing" constant="118.5" id="qEP-nk-RmZ"/>
+                            <constraint firstItem="elT-PN-bQx" firstAttribute="top" secondItem="TmP-jI-kMN" secondAttribute="bottom" constant="63" id="qFs-yv-pSN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="computerImageView" destination="EFz-MP-Afg" id="755-oT-fRR"/>
+                        <outlet property="computerScoreLabel" destination="eSL-TB-tWt" id="j4P-Cy-LNm"/>
+                        <outlet property="meImageView" destination="JNW-iw-Cfg" id="Rdx-hN-SHx"/>
+                        <outlet property="meScoreLabel" destination="WmX-wT-Zbn" id="7Fs-kG-CKi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -107,6 +144,9 @@
     <resources>
         <image name="paper" width="256" height="256"/>
         <image name="scissors" width="256" height="256"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
