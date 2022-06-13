@@ -21,8 +21,8 @@ class ViewController: UIViewController {
         let computerImageNumber = Int.random(in: 1...3)
         let meImageNumber = Int.random(in: 1...3)
         
-        setImage(imageView: computerImageView, number: computerImageNumber)
-        setImage(imageView: meImageView, number: meImageNumber)
+        setImage(imageView: computerImageView, imageNumber: computerImageNumber)
+        setImage(imageView: meImageView, imageNumber: meImageNumber)
         
         calculateScore(computerNumber: computerImageNumber, meNumber: meImageNumber)
     }
@@ -39,8 +39,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    func setImage(imageView: UIImageView, number: Int) {
-        switch number {
+    func setImage(imageView: UIImageView, imageNumber: Int) {
+        switch imageNumber {
         case 1:
             imageView.image = UIImage(named: "rock")
         case 2:
@@ -54,7 +54,7 @@ class ViewController: UIViewController {
     
     func calculateScore(computerNumber: Int, meNumber: Int) {
         if computerNumber == 1 && meNumber == 1 {
-            print("Empate")
+            showTieAlert()
         }
         
         if computerNumber == 1 && meNumber == 2 {
@@ -66,7 +66,7 @@ class ViewController: UIViewController {
         }
         
         if computerNumber == 2 && meNumber == 2 {
-            print("Empate")
+            showTieAlert()
         }
         
         if computerNumber == 2 && meNumber == 1 {
@@ -78,7 +78,7 @@ class ViewController: UIViewController {
         }
         
         if computerNumber == 3 && meNumber == 3 {
-            print("Empate")
+            showTieAlert()
         }
         
         if computerNumber == 3 && meNumber == 1 {
@@ -91,6 +91,12 @@ class ViewController: UIViewController {
         
         computerScoreLabel.text = String(computerScoreCount)
         meScoreLabel.text = String(meScoreCount)
+    }
+    
+    func showTieAlert() {
+        let alert = UIAlertController(title: "Empate", message: "Xiiiii, empatou! Tente a sorte novamente", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
